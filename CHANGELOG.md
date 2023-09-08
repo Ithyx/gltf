@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 The `gltf` crate adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+## [1.3.0] - 2023-08-21
+
+### Added
+
+- Support for the `KHR_materials_emissive_strength` extension.
+
+### Fixed
+
+- `Accessor::byte_offset` is now optional for sparse accessors.
+
 ## [1.2.0] - 2023-06-08
 
 ### Added
@@ -208,15 +220,15 @@ The `gltf` crate adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `fn Gltf::from_*` now imports binary glTF as well as standard glTF.
 - `fn Gltf::from_reader` now requires `reader` to implement `std::io::Seek`.
 - `Buffer::uri` now returns `None` in the case of binary glTF payload instead
-	of the magic string `"#bin"`.
+  of the magic string `"#bin"`.
 - The `POSITION` attribute is now required by all mesh primitives.
 - Several renames:
-	- `glb` → `binary`.
-	- `Error::Glb` → `Error::Binary`.
-	- `TrsProperty` → `Property`.
-	- `InterpolationAlgorithm` → `Interpolation`.
-	- `Target::path` → `Target::property`.
-	- `Primitive::position_bounds` → `Primitive::bounding_box`.
+  - `glb` → `binary`.
+  - `Error::Glb` → `Error::Binary`.
+  - `TrsProperty` → `Property`.
+  - `InterpolationAlgorithm` → `Interpolation`.
+  - `Target::path` → `Target::property`.
+  - `Primitive::position_bounds` → `Primitive::bounding_box`.
 - The `names` feature is now enabled by default, along with `utils` and
   `import`. Rationale: Pareto principle.
 
@@ -433,14 +445,14 @@ The `gltf` crate adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Allowed the crate to build on the latest stable `rustc` (1.15) 
+- Allowed the crate to build on the latest stable `rustc` (1.15)
   using the new `serde` frontend, i.e. with the serde `proc_macro`.
 
 ## [0.2.1] - 2016-11-17
 
 ### Changed
 
-- Allowed the crate to build on the latest stable `rustc` (1.14) 
+- Allowed the crate to build on the latest stable `rustc` (1.14)
   using the `serde_codegen` crate.
 
 ## [0.2.0] - 2016-11-15
@@ -460,4 +472,3 @@ The `gltf` crate adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Initial (incomplete) glTF 1.0 implementation.
-
